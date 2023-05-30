@@ -17,7 +17,7 @@ export default function ArticlesList () {
                     return <li key={article_id}>
                         <h2>{title}</h2>
                         <p>{author}</p>
-                        <img src={article_img_url} alt={title}></img>
+                        <img src={article_img_url}></img>
                     </li>
                 })}
             </ul>
