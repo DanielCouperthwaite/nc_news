@@ -1,14 +1,25 @@
 import { useState } from 'react'
 import './App.css'
-import Header from '../Components/Header'
+
+import Nav from '../Components/Nav'
+import ArticlesList from '../Components/ArticlesList'
+import Home from '../Components/Header'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   
 
   return (
+    <BrowserRouter>
     <>
-      <Header />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/articles" element={<ArticlesList />} />
+      </Routes>
     </>
+    </BrowserRouter>
   )
 }
 
