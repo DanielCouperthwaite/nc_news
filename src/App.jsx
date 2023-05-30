@@ -3,9 +3,11 @@ import './App.css'
 
 import Nav from '../Components/Nav'
 import ArticlesList from '../Components/ArticlesList'
-import Home from '../Components/Header'
+import Home from '../Components/Home'
+import ArticleDetails from '../Components/ArticleDetails'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 function App() {
   
@@ -17,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<ArticlesList />} />
+        <Route path="/articles/:article_id" element={<ArticleDetails />} />
       </Routes>
     </>
     </BrowserRouter>
