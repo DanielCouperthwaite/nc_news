@@ -22,7 +22,7 @@ export default function ArticleDetails () {
             <p>🕓 {currentArticle.created_at}</p>
             <p>By {currentArticle.author}</p>
             <p>Votes: {currentArticle.votes}</p>
-            <img src={currentArticle.article_img_url}></img>
+            <img src={currentArticle.article_img_url} alt={title}></img>
             <p>{currentArticle.body}</p>
         </>
     )
