@@ -10,7 +10,6 @@ export const getArticles = () => {
 
 export const getArticleById = (article_id) => {
     return nc_news.get(`/articles/${article_id}`).then(({ data }) => {
-        console.log(data)
         return data
     })
 }
