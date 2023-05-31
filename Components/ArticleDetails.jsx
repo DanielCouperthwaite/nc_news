@@ -18,16 +18,10 @@ export default function ArticleDetails () {
         })
     }, [article_id])
 
-    useEffect(() => {
-        getCommentsById(article_id).then(( comments ) => {
-            setCurrentComments(comments)
-        })
-    }, [article_id])
-
     return (
         <>
             <ArticleContent currentArticle = {currentArticle}/>
-            <ArticleComments currentComments = {currentComments} article_id = {article_id}/>
+            <ArticleComments article_id = {article_id} currentComments = {currentComments} setCurrentComments = {setCurrentComments} />
         </>
     )
 
