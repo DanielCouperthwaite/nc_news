@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
-import { useParams, Routes, Route } from 'react-router-dom'
-import { getArticleById } from '../src/utils/api'
+import { useParams } from 'react-router-dom'
+import { getArticleById, getCommentsById } from '../src/utils/api'
 import moment from 'moment';
+import ArticleContent from './ArticleContent';
+import ArticleComments from './ArticleComments';
+
 
 export default function ArticleDetails () {
     
     const [currentArticle, setCurrentArticle] = useState([])
+    const [currentComments, setCurrentComments] = useState([])
     const {article_id}  = useParams()
     
     useEffect(() => {
@@ -14,15 +18,17 @@ export default function ArticleDetails () {
         })
     }, [article_id])
 
+    useEffect(() => {
+        getCommentsById(article_id).then(( comments ) => {
+            setCurrentComments(comments)
+        })
+    }, [article_id])
+
     return (
         <>
-            
-            <h2>{currentArticle.title}</h2>
-            {/* <p>🕓 {moment().format(currentArticle.created_at, "DD MM YYYY hh:mm:ss")}</p> */}
-            <p>By {currentArticle.author}</p>
-            <p>Votes: {currentArticle.votes}</p>
-            <img src={currentArticle.article_img_url} alt={currentArticle.title}></img>
-            <p>{currentArticle.body}</p>
+            <ArticleContent currentArticle = {currentArticle}/>
+            <ArticleComments currentComments = {currentComments} article_id = {article_id}/>
         </>
     )
+
 }

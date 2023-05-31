@@ -15,5 +15,3 @@ export default function ({currentArticles}) {
         </>
     )
 }
-
-// Adding to enable commit
