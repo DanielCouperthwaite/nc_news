@@ -9,6 +9,12 @@ export const getArticles = () => {
     })
 }
 
+export const getTopics = () => {
+    return nc_news.get('/topics').then(({ data }) => {
+        return data.topics
+    })
+}
+
 export const getArticleById = (article_id) => {
     return nc_news.get(`/articles/${article_id}`).then(({ data }) => {
         return data

@@ -13,6 +13,7 @@ export default function Nav () {
             <Link to="/">Home </Link>
             <Link to="/articles">All Articles </Link>
             <Link to="/users">Users </Link>
+            <Link to="/topics">Topics </Link>
             <p>Signed in as {user.username}</p>
             <img style={{height:40, width: 40}}src={user.avatar_url}></img>
         </nav>

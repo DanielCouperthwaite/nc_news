@@ -6,9 +6,11 @@ import ArticlesList from '../Components/ArticlesList'
 import Home from '../Components/Home'
 import ArticleDetails from '../Components/ArticleDetails'
 import Users from '../Components/Users'
+import Topics from '../Components/Topics'
 import { UserContext } from '../Contexts/userContext'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
         <Route path="/articles" element={<ArticlesList />} />
         <Route path="/articles/:article_id" element={<ArticleDetails user={user}/>} />
         <Route path="/users" element={<Users />} />
+        <Route path="/topics" element={<Topics />} />
       
       </Routes>
     </>
