@@ -42,9 +42,20 @@ export const patchDownVote = (article_id) => {
     })
 }
 
-export const patchHeartVote = (article_id) => {
+export const patchHeartUpVote = (article_id) => {
     const patchBody = {
         inc_votes : 1000,
+    }
+    return nc_news
+        .patch(`/articles/${article_id}/`, patchBody)
+        .then(( data ) => {
+        return data
+    })
+}
+
+export const patchHeartDownVote = (article_id) => {
+    const patchBody = {
+        inc_votes : -1000,
     }
     return nc_news
         .patch(`/articles/${article_id}/`, patchBody)
