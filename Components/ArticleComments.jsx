@@ -6,7 +6,6 @@ export default function ArticleComments ({currentComments, setCurrentComments, a
 
     useEffect(() => {
         getCommentsById(article_id).then(( comments ) => {
-            console.log(comments)
             if(comments.length === 0){setCurrentComments('No Comments Yet')}
             else {setCurrentComments(comments)}
         })

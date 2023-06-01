@@ -19,3 +19,47 @@ export const getCommentsById = (article_id) => {
         return data.comments
     })
 }
+
+export const patchUpVote = (article_id) => {
+    const patchBody = {
+        inc_votes : 1,
+    }
+    return nc_news
+        .patch(`/articles/${article_id}/`, patchBody)
+        .then(( data ) => {
+        return data
+    })
+}
+
+export const patchDownVote = (article_id) => {
+    const patchBody = {
+        inc_votes : -1,
+    }
+    return nc_news
+        .patch(`/articles/${article_id}/`, patchBody)
+        .then(( data ) => {
+        return data
+    })
+}
+
+export const patchHeartUpVote = (article_id) => {
+    const patchBody = {
+        inc_votes : 1000,
+    }
+    return nc_news
+        .patch(`/articles/${article_id}/`, patchBody)
+        .then(( data ) => {
+        return data
+    })
+}
+
+export const patchHeartDownVote = (article_id) => {
+    const patchBody = {
+        inc_votes : -1000,
+    }
+    return nc_news
+        .patch(`/articles/${article_id}/`, patchBody)
+        .then(( data ) => {
+        return data
+    })
+}
