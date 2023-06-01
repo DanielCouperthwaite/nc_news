@@ -43,7 +43,7 @@ export default function NewCommentForm ({setCurrentComments, article_id, user}) 
                 onChange={(event) => setNewComment(event.target.value)}
                 ></textarea>
                 <br/>
-                <button>Add Comment</button>
+                <button disabled={!newComment}>Add Comment</button>
                 <p>{ guestError === false ? '' : 'Cannot post a comment as guest. Please sign in!' }</p>
             </form>
         </>
