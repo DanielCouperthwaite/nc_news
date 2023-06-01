@@ -2,6 +2,7 @@ import moment from 'moment'
 import { useState, useEffect } from 'react'
 import { getCommentsById } from '../src/utils/api'
 
+
 export default function ArticleComments ({currentComments, setCurrentComments, article_id}) {
 
     useEffect(() => {

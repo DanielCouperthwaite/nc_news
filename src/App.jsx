@@ -5,23 +5,34 @@ import Nav from '../Components/Nav'
 import ArticlesList from '../Components/ArticlesList'
 import Home from '../Components/Home'
 import ArticleDetails from '../Components/ArticleDetails'
+import Users from '../Components/Users'
+import { UserContext } from '../Contexts/userContext'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
   
+  const [user, setUser] = useState({
+    username: "guest",
+    avatar_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNNBe5CMnw0EyOx4YEVKphGQD6iWyaqlo9vg&usqp=CAU"
+  })
+
 
   return (
     <BrowserRouter>
+    <UserContext.Provider value={{user, setUser}}>
     <>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles" element={<ArticlesList />} />
-        <Route path="/articles/:article_id" element={<ArticleDetails />} />
+        <Route path="/articles/:article_id" element={<ArticleDetails user={user}/>} />
+        <Route path="/users" element={<Users />} />
+      
       </Routes>
     </>
+    </UserContext.Provider>
     </BrowserRouter>
   )
 }
