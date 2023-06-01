@@ -6,7 +6,7 @@ import { useContext } from "react"
 
 export default function NewCommentForm ({setCurrentComments, article_id, user}) {
 
-    const [newComment, setNewComment] = useState([])
+    const [newComment, setNewComment] = useState('')
     const [guestError, setGuestError] = useState(false)
     
 

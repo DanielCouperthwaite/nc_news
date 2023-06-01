@@ -5,12 +5,26 @@ import { getCommentsById } from '../src/utils/api'
 
 export default function ArticleComments ({currentComments, setCurrentComments, article_id}) {
 
+    const [isLoading, setIsLoading] = useState(true)
+
     useEffect(() => {
         getCommentsById(article_id).then(( comments ) => {
-            if(comments.length === 0){setCurrentComments('No Comments Yet')}
-            else {setCurrentComments(comments)}
+            
+            if(comments.length === 0){
+                setCurrentComments('No Comments Yet')
+                setIsLoading(false)
+            }
+            else {setCurrentComments(comments)
+                setIsLoading(false)
+            }
         })
     }, [article_id])
+
+    
+
+    if(isLoading) {
+        return <h2>Loading...</h2>
+    }
 
     return (
         <>
