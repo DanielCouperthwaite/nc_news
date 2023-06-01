@@ -1,4 +1,5 @@
 import axios from "axios";
+import { UserContext } from "../../Contexts/userContext";
 
 const nc_news = axios.create({baseURL: 'https://nc-news-qkml.onrender.com/api'})
 
@@ -19,6 +20,21 @@ export const getCommentsById = (article_id) => {
         return data.comments
     })
 }
+
+export const postComment = (newComment, article_id, username) => {
+
+    const postBody = {
+        username: username,
+        body: newComment,
+    }
+    return nc_news
+        .post(`/articles/${article_id}/comments`, postBody)
+        .then(( data ) => {
+        return data.data.comment
+        
+    })
+}
+
 
 export const patchUpVote = (article_id) => {
     const patchBody = {
