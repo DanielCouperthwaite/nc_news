@@ -17,9 +17,7 @@ export const getTopics = () => {
 
 export const getArticlesByTopic = (chosenTopic) => {
     return nc_news.get(`/articles?topic=${chosenTopic}`).then(({ data }) => {
-        
         return data.articles.filter((articles) => {return articles.topic === chosenTopic})
-        
     })
 }
 

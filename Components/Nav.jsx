@@ -7,15 +7,18 @@ export default function Nav () {
     const {user} = useContext(UserContext)
 
     return (
-        <nav>
+        <>
             <h1>Just News</h1>
-            <p>No blues, No snooze, No boos... Just News</p>
-            <Link to="/">Home </Link>
-            <Link to="/articles">All Articles </Link>
-            <Link to="/users">Users </Link>
-            <Link to="/topics">Topics </Link>
+            <p style={{fontStyle:'italic', fontSize:20}}>Award winning writing, all in one place</p>
+            <nav>
+            <Link className='nav-selector' to="/">Home </Link>
+            <Link className='nav-selector' to="/articles">All Articles </Link>
+            <Link className='nav-selector' to="/users">Users </Link>
+            <Link className='nav-selector' to="/topics">Topics </Link>
+            </nav>
             <p>Signed in as {user.username}</p>
             <img style={{height:40, width: 40}}src={user.avatar_url}></img>
-        </nav>
+        
+        </>
     )
 }

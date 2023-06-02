@@ -19,7 +19,7 @@ export default function ArticlesList () {
 
     return (
         <main>
-            <ul>
+            <ul className="article-block">
                 <ArticleBlock currentArticles = {currentArticles}/>
             </ul>
         </main>

@@ -19,9 +19,9 @@ export default function Topics () {
 
     return (
         <main>
-            <ul>
+        
                 <TopicBlock currentTopics = {currentTopics}/>
-            </ul>
+            
         </main>
     )
 }

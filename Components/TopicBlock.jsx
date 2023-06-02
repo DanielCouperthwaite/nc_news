@@ -2,17 +2,19 @@ import { Link } from 'react-router-dom'
 
 export default function ({currentTopics}) {
 
-    console.log('inside topic block', currentTopics)
-
     return (
         <>
         <h2>Topics:</h2>
         <p>Just what you need...</p>
-        <ul>
+        <ul className="article-block">>
         {currentTopics.map(({slug}) => {
-                    return <li key={slug}>
-                        <Link to={`/articlesByTopic/${slug}`}><h3>{slug}</h3></Link>
+                    return (
+                    <ul className="article-block">
+                    <li key={slug}>
+                        <Link to={`/articlesByTopic/${slug}`}><h2>{slug}</h2></Link>
                     </li>
+                    </ul>
+                    )
                 })}
         </ul>
         </>

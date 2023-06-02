@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { getArticles, getArticlesByTopic } from "../src/utils/api"
 import { useState } from "react"
-import ArticleBlockByTopic from "./ArticleBlockByTopic"
+import ArticleBlock from "./ArticleBlock"
 
 
 export default function ArticlesByTopic () {
@@ -30,8 +30,10 @@ export default function ArticlesByTopic () {
 
     return (
         <>
-        <h3>This week's featured articles on {topic} ...Just when you need them</h3>
-        <ArticleBlockByTopic topic={topic} currentArticles = {currentArticles}/>
+            <h3>This week's featured articles on {topic} ...Just when you need them</h3>
+            <ul className="article-block">
+                <ArticleBlock topic={topic} currentArticles = {currentArticles}/>
+            </ul>
         </>
     )
 }

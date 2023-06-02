@@ -65,7 +65,7 @@ export default function Votes ({currentArticle}) {
             <button onClick={handleUpvote} >
                 { upClicked === false ? '👍' : 'Liked!' }
             </button>
-            <button onClick={handleDownvote} >
+            <button onClick={handleDownvote} style={{margin: 10}}>
                 { downClicked === false ? '👎' : 'Disliked' }
             </button>
             <button onClick={handleHeartvote} >

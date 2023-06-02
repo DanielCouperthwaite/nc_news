@@ -6,13 +6,14 @@ export default function ({currentArticles}) {
         
         {currentArticles.map(({article_id, title, author, article_img_url}) => {
                     return <li key={article_id}>
-                        <Link to={`/articles/${article_id}`}><h2>{title}</h2></Link>
-                        <p>{author}</p>
+                        
                         <Link to={`/articles/${article_id}`}><img 
                         src={article_img_url} 
                         alt={title}
-                        style={{width: 500, height: 500}}
+                        style = {{width:200, height:200}}
                         ></img></Link>
+                        <Link to={`/articles/${article_id}`}><h2>{title}</h2></Link>
+                        <p>{author}</p>
                     </li>
                 })}
 
