@@ -40,22 +40,27 @@ h1 {
 nav {
   border: 10px solid ;
   background-color: white;
-  padding: 1vw 4vw 1vw 4vw;
   border-radius: 50px;
   justify-content: center;
   min-width: 300px;
 }
 
+.topic {
+  background-color: white;
+  border-radius: 50px;
+  justify-content: center;
+  margin: 10px;
+}
+
 
 .nav-selector {
-  /* font-size: 3.8vw; */
   font-size: 3.8vw;
   margin: 0.5rem;
   display: inline;
 }
 
 .article-content {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 
 button {
