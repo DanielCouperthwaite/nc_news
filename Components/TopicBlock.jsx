@@ -11,7 +11,7 @@ export default function ({currentTopics}) {
         <ul>
         {currentTopics.map(({slug}) => {
                     return <li key={slug}>
-                        <Link to={`/articles`}><h3>{slug}</h3></Link>
+                        <Link to={`/articlesByTopic/${slug}`}><h3>{slug}</h3></Link>
                     </li>
                 })}
         </ul>

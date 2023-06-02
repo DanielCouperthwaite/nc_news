@@ -8,8 +8,10 @@ import ArticleDetails from '../Components/ArticleDetails'
 import Users from '../Components/Users'
 import Topics from '../Components/Topics'
 import { UserContext } from '../Contexts/userContext'
+import ArticlesByTopic from '../Components/ArticlesByTopic'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 
 
@@ -32,6 +34,7 @@ function App() {
         <Route path="/articles/:article_id" element={<ArticleDetails user={user}/>} />
         <Route path="/users" element={<Users />} />
         <Route path="/topics" element={<Topics />} />
+        <Route path="/articlesByTopic/:topic" element={<ArticlesByTopic />} />
       
       </Routes>
     </>
