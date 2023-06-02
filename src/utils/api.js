@@ -9,6 +9,20 @@ export const getArticles = () => {
     })
 }
 
+export const getTopics = () => {
+    return nc_news.get('/topics').then(({ data }) => {
+        return data.topics
+    })
+}
+
+export const getArticlesByTopic = (chosenTopic) => {
+    return nc_news.get(`/articles?topic=${chosenTopic}`).then(({ data }) => {
+        
+        return data.articles.filter((articles) => {return articles.topic === chosenTopic})
+        
+    })
+}
+
 export const getArticleById = (article_id) => {
     return nc_news.get(`/articles/${article_id}`).then(({ data }) => {
         return data
