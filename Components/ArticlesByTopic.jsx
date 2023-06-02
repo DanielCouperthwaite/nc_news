@@ -11,22 +11,27 @@ export default function ArticlesByTopic () {
     const [isLoading, setIsLoading] = useState(true)
     
     const {topic} = useParams()
+
+    
     
     useEffect(() => {
         getArticlesByTopic(topic).then(( articles ) => {
-            console.log('articles gotten by topic', articles)
             setCurrentArticles(articles)
             setIsLoading(false)
         })
     }, [])
     
     
+    if(isLoading) {
+        return <h2>Loading...</h2>
+    }
+
     
 
     return (
         <>
-        <p>This week's featured articles on {topic} ...Just when you need them</p>
-        <p><ArticleBlockByTopic topic={topic} currentArticles = {currentArticles}/></p>
+        <h3>This week's featured articles on {topic} ...Just when you need them</h3>
+        <ArticleBlockByTopic topic={topic} currentArticles = {currentArticles}/>
         </>
     )
 }

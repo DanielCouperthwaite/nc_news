@@ -13,8 +13,6 @@ export default function Topics () {
         })
     }, [])
 
-    console.log(currentTopics)
-
     if(isLoading) {
         return <h2>Loading...</h2>
     }

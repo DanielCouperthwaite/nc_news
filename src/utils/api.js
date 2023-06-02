@@ -15,16 +15,11 @@ export const getTopics = () => {
     })
 }
 
-export const getArticlesByTopic = (topic) => {
-    return nc_news.get(`/articles?topic=${topic}`).then(({ data }) => {
-
-        if(topic === 'cooking'){
-            return [data.articles[7], data.articles[17], data.articles[18]]
-        } else if (topic === 'football'){
-            return [data.articles[8], data.articles[11], data.articles[16]]
-        } else if (topic === 'coding'){
-            return [data.articles[19], data.articles[21], data.articles[31]]
-        }
+export const getArticlesByTopic = (chosenTopic) => {
+    return nc_news.get(`/articles?topic=${chosenTopic}`).then(({ data }) => {
+        
+        return data.articles.filter((articles) => {return articles.topic === chosenTopic})
+        
     })
 }
 

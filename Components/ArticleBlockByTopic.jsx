@@ -3,8 +3,6 @@ import { useState } from 'react'
 
 export default function ({currentArticles}) {
     
-    console.log('insideArticleBlockByTopic', currentArticles)
-
     return (
         <>
         
