@@ -32,10 +32,13 @@ export default function NewCommentForm ({setCurrentComments, article_id, user}) 
 
     return (
         <>
+            <h2>Comments:</h2>
+            <br></br>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="newComment">Have Your Say:</label>
+                <label htmlFor="newComment" className="say">Have Your Say:</label>
                 <br/>
                 <textarea
+                style={{height:100, width: 400}}
                 placeholder="Insert comment here..."
                 id="newComment"
                 multiline="true"

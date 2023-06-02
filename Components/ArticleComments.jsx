@@ -28,12 +28,14 @@ export default function ArticleComments ({currentComments, setCurrentComments, a
 
     return (
         <>
+            <ul className='comment-block'>
              {currentComments.map(({body, author, votes, comment_id, created_at}) => {
                     return <li key={comment_id}>
                         <p>{body}</p>
-                        <p>Submitted by {author} on {moment(`${created_at}`).format(`Do MMMM YYYY`)}{` `},  votes: {votes}</p>
+                        <p>Submitted by {author} on {moment(`${created_at}`).format(`Do MMMM YYYY`)}{` `}</p>
                     </li>
                 })}
+            </ul>
         </>
     )
 }
