@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light dark;
+  color-scheme: light dark;
   color: rgb(255, 255, 255);
-  background-color: #242424; */
+  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,13 +40,13 @@ h1 {
 nav {
   border: 10px solid ;
   background-color: white;
-  padding: 50px;
+  padding: 4vw;
   border-radius: 50px;
   justify-content: center;
 }
 
 .nav-selector {
-  font-size: 120%;
+  font-size: 3vw;
   display: inline;
   margin: 0.5rem
 }
