@@ -4,8 +4,10 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgb(255, 255, 255);
-  background-color: #242424;
+  /* color: rgb(255, 255, 255);
+  background-color: #242424; */
+  color: rgb(161, 238, 255);
+  background-color:  black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -124,7 +126,7 @@ li {
 
 .comment-block li {
   border: 2px solid ;
-  background-color: white;
+  background-color: black;
   padding: 1vw 4vw 1vw 4vw;
   border-radius: 50px;
   width: 300px;
@@ -134,13 +136,27 @@ li {
 }
 
 @media (prefers-color-scheme: light) {
+  
+  
   :root {
     color: black;
     background-color: rgb(161, 238, 255);
   }
+
+  a {
+    font-weight: 500;
+    /* color: #646cff; */
+    color: black;
+  }
+
+  .comment-block li {
+    background-color: whitesmoke;
+  }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
