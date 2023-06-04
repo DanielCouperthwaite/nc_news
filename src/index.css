@@ -19,7 +19,7 @@
 a {
   font-weight: 500;
   /* color: #646cff; */
-  color: black;
+  color: rgb(161, 238, 255);
   text-decoration: inherit;
 }
 a:hover {
@@ -41,22 +41,27 @@ h1 {
 
 nav {
   border: 10px solid ;
-  background-color: white;
+  background-color: whitesmoke;
   border-radius: 50px;
   justify-content: center;
   min-width: 300px;
 }
 
 .topic {
-  background-color: white;
+  
+  background-color: grey;
+  color: white;
   border-radius: 50px;
   justify-content: center;
   margin: 10px;
+  
 }
+
 
 
 .nav-selector {
   font-size: 3.8vw;
+  color: black;
   margin: 0.5rem;
   display: inline;
 }
@@ -145,12 +150,25 @@ li {
 
   a {
     font-weight: 500;
-    /* color: #646cff; */
     color: black;
   }
 
   .comment-block li {
     background-color: whitesmoke;
+  }
+
+  nav {
+    background-color: whitesmoke;
+  }
+  
+  
+  .nav-selector {
+    color: black;
+  }
+
+  .topic {
+    background-color: white;
+    color: black
   }
 
   a:hover {

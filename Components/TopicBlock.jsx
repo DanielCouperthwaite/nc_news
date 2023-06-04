@@ -6,7 +6,7 @@ export default function ({currentTopics}) {
         <>
         <h2>Topics:</h2>
         
-        <ul className="article-block">>
+        <ul className="article-block">
         {currentTopics.map(({slug}) => {
                     return (
                     <ul className="topic">
